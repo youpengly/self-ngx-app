@@ -5,6 +5,11 @@ import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
 if (environment.production) {
+  // production build cancel all console statement
+  window.console.log = (...args) => {};
+  window.console.warn = (...args) => {};
+  window.console.error = (...args) => {};
+  window.console.debug = (...args) => {};
   enableProdMode();
 }
 
