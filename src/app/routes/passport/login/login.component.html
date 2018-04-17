@@ -1,36 +1,47 @@
-<form nz-form [formGroup]="loginForm"  (ngSubmit)="submit()">
-  <nz-alert *ngIf="error" [nzType]="'error'" [nzMessage]="error" [nzShowIcon]="true" class="mb-lg"></nz-alert>
-  <div nz-form-item>
-    <div nz-form-control nz-col [nzSm]="14" [nzXs]="24" nzHasFeedback>
-      <nz-input formControlName="username" [nzPlaceHolder]="'admin'" [nzSize]="'large'">
-        <ng-template #prefix>
-          <i class="anticon anticon-user"></i>
-        </ng-template>
-      </nz-input>
-      <div nz-form-explain *ngIf="loginForm.controls.username.dirty&&loginForm.controls.username.hasError('required')">请输入用户名!</div>
-      <div nz-form-explain *ngIf="loginForm.controls.username.dirty
-      &&(loginForm.controls.username.hasError('minLength')||loginForm.controls.username.hasError('maxLength')||loginForm.controls.username.hasError('pattern'))">
-          用户名长度在3~6位,只能包含字母,数字!
+<div class="login-wrapper">
+  <header>
+    <span>corporation logo</span>
+    <span>This is corporation name</span>
+  </header>
+  <section>
+    <form nz-form [formGroup]="loginForm" (ngSubmit)="submit()">
+      <nz-alert *ngIf="error" [nzType]="'error'" [nzMessage]="error" [nzShowIcon]="true" class="mb-lg"></nz-alert>
+      <div nz-form-item>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24" nzHasFeedback>
+          <nz-input formControlName="username" [nzPlaceHolder]="'admin'" [nzSize]="'large'">
+            <ng-template #prefix>
+              <i class="anticon anticon-user"></i>
+            </ng-template>
+          </nz-input>
+          <div nz-form-explain *ngIf="loginForm.controls.username.dirty&&loginForm.controls.username.hasError('required')">请输入用户名!</div>
+          <div nz-form-explain *ngIf="loginForm.controls.username.dirty
+                    &&(loginForm.controls.username.hasError('minLength')||loginForm.controls.username.hasError('maxLength')||loginForm.controls.username.hasError('pattern'))">
+            用户名长度在3~6位,只能包含字母,数字!
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <div nz-form-item>
-    <div nz-form-control nz-col [nzSm]="14" [nzXs]="24" nzHasFeedback>
-      <nz-input formControlName="password" [nzType]="'password'" [nzPlaceHolder]="'111'" [nzSize]="'large'">
-        <ng-template #prefix>
-          <i class="anticon anticon-lock"></i>
-        </ng-template>
-      </nz-input>
-      <div nz-form-explain *ngIf="loginForm.controls.password.dirty&&loginForm.controls.password.hasError('required')">请输入密码!</div>
-      <div nz-form-explain *ngIf="loginForm.controls.password.dirty
-      &&(loginForm.controls.password.hasError('minLength')||loginForm.controls.password.hasError('maxLength')||loginForm.controls.password.hasError('pattern'))">
-        密码长度在1~8位,并且不能包含空格!
+      <div nz-form-item>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24" nzHasFeedback>
+          <nz-input formControlName="password" [nzType]="'password'" [nzPlaceHolder]="'111'" [nzSize]="'large'">
+            <ng-template #prefix>
+              <i class="anticon anticon-lock"></i>
+            </ng-template>
+          </nz-input>
+          <div nz-form-explain *ngIf="loginForm.controls.password.dirty&&loginForm.controls.password.hasError('required')">请输入密码!</div>
+          <div nz-form-explain *ngIf="loginForm.controls.password.dirty
+                    &&(loginForm.controls.password.hasError('minLength')||loginForm.controls.password.hasError('maxLength')||loginForm.controls.password.hasError('pattern'))">
+            密码长度在1~8位,并且不能包含空格!
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <div nz-form-item>
-    <div nz-form-control>
-      <button nz-button type="submit" [disabled]="loginForm?.invalid" nzType="primary" nzSize="large" [nzLoading]="loading" class="ant-btn__block">登录</button>
-    </div>
-  </div>
-</form>
+      <div nz-form-item>
+        <div nz-form-control>
+          <button nz-button type="submit" nzType="primary" nzSize="large" [nzLoading]="loading" class="ant-btn__block">登录</button>
+        </div>
+      </div>
+    </form>
+  </section>
+  <footer>
+    Footer
+  </footer>
+</div>
