@@ -7,7 +7,17 @@
     "types": [
       "jasmine",
       "node"
-    ]
+    ],
+    "paths": {
+      "@shared": [ "app/shared" ],
+      "@shared/*": [ "app/shared/*" ],
+      "@core": [ "app/core/" ],
+      "@core/*": [ "app/core/*" ],
+      "@testing": [ "testing/" ],
+      "@testing/*": [ "testing/*" ],
+      "@env": [ "environments/" ],
+      "@env/*": [ "environments/*" ]
+    }
   },
   "files": [
     "test.ts"
