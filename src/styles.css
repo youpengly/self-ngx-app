@@ -1,1 +1,70 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --screen-md-min: 1440px;
+  --text-color: #000000;
+  --body-bgColor: #F8F5F5;
+  --header-hg: 60px;
+  --content-padding: 5px;
+  --aside-wd: 200px;
+  --aside-collapsed-wd: 60px;
+}
+
+html {
+  direction: ltr;
+  height: 100%; 
+  touch-action: manipulation;
+}
+html, body, app-root {
+  overflow-x: hidden;
+  height: 100%;
+}
+body {
+  color: var(--text-color);
+  background-color: var(--body-bgColor) !important;
+}
+
+.wrapper{
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.content{
+  margin: var(--header-hg) var(--content-padding) var(--content-padding) calc(var(--aside-wd) + var(--content-padding));
+}
+
+.header .logo img.collapsed{
+	display: none;
+}
+.header .logo img.expanded {
+	display: inline;
+}
+
+/* Desktop */
+@media(max-width: 1200px) {
+  
+}
+
+/* Collapsed */
+.aside-collapsed .sidebar {
+  width: var(--aside-collapsed-wd);
+}
+.aside-collapsed .content {
+  margin-left: calc(var(--aside-collapsed-wd) + var(--content-padding));
+}
+
+.aside-collapsed .header .logo{
+	width: var(--aside-collapsed-wd);
+}
+
+.aside-collapsed .header .logo img.collapsed {
+	display: inline;
+}
+
+.aside-collapsed .header .logo img.expanded {
+	display: none;
+}

@@ -1,0 +1,26 @@
+<div class="logo">
+    <a [routerLink]="['/']">
+        <img class="expanded" src="./assets/img/logo-full.svg"  style="max-height:40px;" />
+        <img class="collapsed" src="./assets/img/logo.svg"  style="max-height:30px;" />
+    </a>
+</div>
+<div class="top-nav-wrap"  style="align-items:center; font-size: 20px;">
+  <ul class="top-nav">
+    <!-- Menu -->
+    <li>
+      <div class="item" (click)="toggleCollapsedSidebar()">
+        <i class="anticon anticon-menu-{{collapsed ? 'unfold' : 'fold'}}"></i>
+      </div>
+    </li>
+  </ul>
+  <ul class="top-nav">
+    <li>
+      <h1>Production Title</h1>
+    </li>
+  </ul>
+  <ul class="top-nav">
+    <li class="hidden-xs">
+      <app-header-user></app-header-user>
+    </li>
+  </ul>
+</div>

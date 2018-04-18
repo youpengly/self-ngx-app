@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute} from '@angular/router';
-import { NavigationEnd, RouteConfigLoadStart, NavigationError } from '@angular/router';
 
-import { LoggerService } from '@core/log/logger.service';
-import { AuthService } from '@core/auth/auth.service';
 
 
 
@@ -13,24 +9,21 @@ import { AuthService } from '@core/auth/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  public collapsed: boolean;
   constructor(
-    private router: Router,
-    private acRoute: ActivatedRoute,
-    private logger: LoggerService,
-    private authService: AuthService,
   ) {
-    router.events.subscribe(evt => {
-      if (evt instanceof NavigationEnd) {
-         console.log(evt);
-      }
-  });
+  }
+
+  toggleCollapsedSidebar() {
+    this.collapsed = !this.collapsed;
+    const appRoot = document.querySelector('app-root');
+    console.log(appRoot);
+    appRoot.classList.toggle('aside-collapsed');
   }
 
 
   ngOnInit() {
-    if (!this.authService.checkLogin()) {
-      this.router.navigate(['/login']);
-    }
+    this.collapsed = true;
   }
 
 

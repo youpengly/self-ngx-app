@@ -26,6 +26,14 @@ export class AuthService {
   // store the URL so we can redirect after logging in
   redirectUrl: string;
 
+  setCurrentUser = (username: string, pwd: string): void =>  {
+    this.currentUser.username = username;
+    this.currentUser.password = pwd;
+  }
+
+  getCurrentUser = () => {
+    return this.currentUser;
+  }
 
   checkLogin(): boolean {
     if ( localStorage.getItem('sessionId') !== '' &&  this.isLogin ) {

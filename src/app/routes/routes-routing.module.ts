@@ -33,5 +33,5 @@ const routes: Routes = [
 @NgModule({
     imports: [RouterModule.forRoot(routes, { useHash: environment.useHash })],
     exports: [RouterModule]
-  })
+})
 export class RouteRoutingModule { }

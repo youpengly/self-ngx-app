@@ -53,6 +53,7 @@ export class LoginComponent implements OnDestroy {
         this.error = `账号或密码错误`;
         return;
       }
+      this.authService.setCurrentUser(this.userName.value, this.password.value);
       this.router.navigate(['/']);
     }, 1000);
   }
