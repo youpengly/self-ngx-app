@@ -40,6 +40,7 @@ export class LoginComponent implements OnDestroy {
   submit() {
     for (const i of Object.keys(this.loginForm.controls)) {
       this.loginForm.controls[ i ].markAsDirty();
+      this.loginForm.controls[ i ].updateValueAndValidity();
     }
     if (this.loginForm.invalid) {
       this.logger.log('input error!');
