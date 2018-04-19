@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  private appRootNode = document.querySelector('app-root');
   public collapsed: boolean;
   constructor(
   ) {
@@ -16,9 +17,11 @@ export class HeaderComponent implements OnInit {
 
   toggleCollapsedSidebar() {
     this.collapsed = !this.collapsed;
-    const appRoot = document.querySelector('app-root');
-    console.log(appRoot);
-    appRoot.classList.toggle('aside-collapsed');
+    // const appRoot = document.querySelector('app-root');
+    console.log(this.appRootNode);
+    if (this.appRootNode) {
+      this.appRootNode.classList.toggle('aside-collapsed');
+    }
   }
 
 
