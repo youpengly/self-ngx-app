@@ -1,7 +1,10 @@
 <div class="aside-inner">
-  <ul nz-menu [nzTheme]="'dark'" [nzMode]="isCollapsed?'vertical':'inline'">
+  <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="setting.layout.collapsed">
     <li nz-submenu>
-      <span title><i class="anticon anticon-user"></i><span class="nav-text">Dashboard</span></span>
+      <span title>
+        <i class="anticon anticon-calendar"></i>
+        <span class="nav-text" *ngIf="!setting.layout.collapsed" >Dashboard</span>
+      </span>
       <ul>
         <li nz-menu-item><a routerLink="/dashboard/v1">v1</a></li>
         <li nz-menu-item><a routerLink="/dashboard/analysis">Analysis</a></li>
@@ -10,7 +13,10 @@
       </ul>
     </li>
     <li nz-submenu>
-      <span title><i class="anticon anticon-user"></i><span class="nav-text">User</span></span>
+      <span title>
+        <i class="anticon anticon-user"></i>
+        <span class="nav-text" *ngIf="!setting.layout.collapsed"  >User</span>
+      </span>
       <ul>
         <li nz-menu-item>Tom</li>
         <li nz-menu-item>Bill</li>
@@ -18,13 +24,19 @@
       </ul>
     </li>
     <li nz-submenu>
-      <span title><i class="anticon anticon-team"></i><span class="nav-text">Team</span></span>
+      <span title>
+        <i class="anticon anticon-team"></i>
+        <span class="nav-text" *ngIf="!setting.layout.collapsed"  >Team</span>
+      </span>
       <ul>
         <li nz-menu-item>Team 1</li>
         <li nz-menu-item>Team 2</li>
       </ul>
     </li>
-    <li nz-menu-item><span><i class="anticon anticon-file"></i><span class="nav-text">File</span></span>
+    <li nz-menu-item>
+      <span><i class="anticon anticon-file"></i>
+        <span class="nav-text" *ngIf="!setting.layout.collapsed"  >File</span>
+      </span>
     </li>
   </ul>
 </div>

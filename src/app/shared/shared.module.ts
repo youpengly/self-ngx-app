@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
+import { SettingsService } from './setting/setting.service';
+
 
 
 // region: third libs
@@ -32,6 +34,7 @@ const INTERFACES = [];
         ...COMPONENTS,
         ...DIRECTIVES
     ],
+    providers: [SettingsService],
     exports: [
         CommonModule,
         FormsModule,
